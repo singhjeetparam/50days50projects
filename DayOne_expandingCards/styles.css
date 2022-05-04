@@ -1,0 +1,90 @@
+/* Applying some basic properties to all elements */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* height and width properties includes border, padding and margin. */
+    font-family: 'Montserrat', sans-serif;
+}
+
+.image1{
+    background-image: url("https://images.unsplash.com/photo-1651047493663-bc21171d7f41?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80");
+}
+
+.image2{
+    background-image: url("https://images.unsplash.com/photo-1651166403368-0cd7b89a2792?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80");
+}
+
+.image3{
+    background-image: url("https://images.unsplash.com/photo-1651488263698-6c95dd622fc7?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1074&q=80");
+}
+
+
+.image4{
+    background-image: url("https://images.unsplash.com/photo-1650532596364-37b8a537f3f2?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1128&q=80");
+}
+
+.image5{
+    background-image: url("https://images.unsplash.com/photo-1650374471530-8efdf239a269?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80");
+}
+
+body{
+    /* for centering the image container  */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+}
+
+
+.container{
+    display: flex;
+    justify-content: center;
+    width: 90vw;
+}
+
+.panel{
+    height: 70vh;
+    padding: 10px;
+    margin: 10px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    cursor: pointer;
+    border-radius: 5px;
+    color: white;
+    /* Flex 0.5 to evenly spread all the panels  */
+    flex: 0.5;
+    /* Position realtive so that we can change the position of its inner elements i.e h3 */
+    position: relative;
+    /* A basic trasition on flex property */
+    transition: flex 1s ease-in;
+}
+
+.panel h3{
+    /* Here we have made the position of text absolute to align it in the bottom left corner of the image */
+    position: absolute;
+    bottom: 20px;
+    left: 24px;
+    opacity: 0;
+}
+
+.active{
+    flex: 3;
+}
+
+.panel.active h3{
+    opacity: 1;
+}
+
+/* Media query to remove 2 panels when the widht of device is less than 480px or for mobile view */
+@media (max-width: 480px) {
+    .container{
+        width: 100vhw;
+    }
+
+    .panel:nth-of-type(4), .panel:nth-last-of-type(5){
+        display: none;
+    }
+}
