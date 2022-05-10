@@ -1,0 +1,110 @@
+/* Basic CSS for all the elements */
+*{
+    margin: 0;
+    padding: 0;
+    /* Box Sizing determines the height and widht of an element, border-box includes the margin, padding and border in the height and width of  the element */
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+}
+
+/* Css Variables for colors */
+:root{
+    --bgcolor: #863eff;
+    --contrastcolor: #6f05fc;
+}
+
+body{
+    /* Using flex for centering the Container-div */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+    background-color: #f4f1ff;
+    color: var(--contrastcolor);
+}
+
+.container{
+    text-align: center;
+}
+
+
+
+.progress-container{
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    margin-bottom: 30px;
+    max-width: 100%;
+    width: 350px;
+}
+
+/* This ::before is used to set a background bar for the progress bar */
+.progress-container::before{
+    content: '';
+    position: absolute;
+    background-color: #daceff;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    height: 5px;
+    width: 100%;
+    z-index: -1;
+
+}
+
+/* Progress-Bar */
+.progress{
+    position: absolute;
+    background-color: var(--bgcolor);
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    height: 5px;
+    width: 0%;
+    z-index: -1;
+    transition: 0.5s ease;
+}
+
+/* Numbers/ Progress Levels */
+.circle{
+    background-color: #f4f1ff;
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+    border: 3px solid var(--bgcolor);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 1s ease;
+}
+
+h1{
+    
+    position: absolute;
+    top: 30%;
+}
+
+/* Buttons */
+.btn{
+    padding: 5px;
+    background-color: var(--contrastcolor);
+    border-radius: 10%;
+    color: white;
+    outline: var(--contrastcolor);
+    cursor: pointer;
+    
+}
+
+.btn:disabled{
+    background-color: #f4f1ff;
+    color: #6f05fc;
+}
+
+/* Active class */
+.circle.active{
+
+    background-color: var(--bgcolor);
+    color: white;
+}

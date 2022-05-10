@@ -1,0 +1,72 @@
+/* basic adjustment for all elements */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+}
+
+/* to make the main div in the center of the window  */
+body{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #cec2f0;
+}
+
+
+body h1{
+    padding: 10px;
+}
+
+/* We have made the search container relative to make it stick to the default position
+Why we need this to be relative so that the inner elements will stays in this container position, otherwise they will be disaligned */
+.search-container{
+    position: relative;
+    height: 50px;
+}
+
+
+/* adding css to input element */
+.search-container .input{
+    height: 50px;
+    width: 50px;
+    border: none;
+    /* added transition so that the movement will look clean  */
+    transition: width 0.3s ease;
+    background-color: white;
+    padding: 10px;
+}
+
+
+/* adding css to button  */
+.btn{
+    /* set the position to absolute to set its position in front of the search input  */
+    position: absolute;
+    height: 50px;
+    width: 50px;
+    top: 0;
+    left: 0;
+    border: none;
+    background-color: white;
+    padding: 10px;
+    /* added transform so that  it'll move along with the input bar */
+    transition: transform 0.3s ease;
+}
+
+/* removing outline when they are in focus */
+.btn:focus, .input:focus{
+    outline: none;
+}
+
+/* when active class is ON on input element */
+.search-container.active .input{
+    width: 250px;
+}
+
+/* when active class is ON on button  */
+.search-container.active .btn{
+    transform: translateX(200px);
+}
