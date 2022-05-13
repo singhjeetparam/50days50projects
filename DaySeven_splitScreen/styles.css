@@ -1,0 +1,101 @@
+/* basic css for all the elements */
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Montserrat', sans-serif;
+    box-sizing: border-box;
+    color: white;
+}
+
+/* Making the body flex to center align everything */
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    height: 100vh;
+    background-color: black;
+}
+/* 
+Now as the main container is in center, we will make this container flex also. So that all the elements in it will be center aligned */
+.main-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    flex: 1;
+}
+
+/* making Split flex also */
+
+.split{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    flex: 1;
+    position: relative;
+    transition: flex 1.5s ease;
+}
+
+/* adding images in left div */
+.left{
+    background-image: url('https://www.apple.com/v/iphone-13-pro/f/images/overview/hero/hero_endframe__3tq53uan9teq_xlarge_2x.jpg');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100vh;
+   
+}
+
+
+/* adding images in right div */
+.right{
+    background-image: url('https://images.samsung.com/in/smartphones/galaxy-s22-ultra/images/galaxy-s22-ultra_highlights_kv_img.jpg');
+    background-position: center;
+    background-size: cover;
+    height: 100vh;
+}
+
+
+/* styling button */
+.btn{
+    padding: 10px;
+    background-color: transparent;
+    border: 2px solid white;
+    font-weight: bolder;
+    z-index: 1;
+}
+
+
+/* Heading */
+.heading{
+    position: absolute;
+    top: 100px;
+    font-style: oblique;
+}
+
+/* This class will transform the width of the left and right section  */
+.grow{
+    flex: 3;
+}
+
+
+/* Color overlay on left image */
+.split.left::before{
+    content: "";
+    position: absolute;
+    background-color: rgba(181, 4, 251, 0.5);
+    height: 100%;
+    width: 100%;
+}
+
+/* color overlay on right image */
+.split.right::before{
+    content: "";
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.5);
+    height: 100%;
+    width: 100%;
+}
+
