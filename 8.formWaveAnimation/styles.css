@@ -1,0 +1,90 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Montserrat", sans-serif;
+}
+
+body {
+  background: linear-gradient(135deg, rgb(56, 187, 248) 0%, rgb(14, 162, 233) 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+.container{
+    background: linear-gradient(135deg, rgb(3, 103, 161) 0%, rgb(12, 73, 110) 100%);
+    border-radius: 10px;
+    padding: 20px 40px;
+   
+}
+
+.container h1{
+    padding-bottom: 20px;
+    text-align: center;
+    color: white;
+}
+
+
+.input{
+    background: none;
+    border: none;
+    border-bottom: 2px solid white;
+    padding: 10px 0px;
+    width: 100%;
+    color: white;
+    font-weight: bold;
+}
+
+.form-control input:focus ,
+.form-control input:valid {
+    outline: none;
+}
+
+
+
+.btn{
+    font-size: 15px;
+    font-weight: bold;
+    background-color: #bae5fd;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+    margin: 20px 0px;
+    padding: 10px;
+}
+
+
+
+.form-control label span{
+    position: relative;
+    top: 30px;
+    color: white;
+    font-weight: bold;
+}
+
+.form-control label span{
+    display: inline-block;
+}
+
+
+.form-control input:focus +  label span,
+.form-control input:valid + label span{
+
+    transform: translateY(100px);
+
+}
+
+form p{
+    color: white;
+}
+
+form p a{
+    text-decoration: none;
+    color: rgb(56, 187, 248);
+}
+
+
+
